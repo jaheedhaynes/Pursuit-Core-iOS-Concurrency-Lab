@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct ImageClient {
+struct ImageAPIClient {
     
-    static func fetchImage(for urlString: String, completion: @escaping (Result<UIImage?, Error>) -> ()) {
+    static func getImage(for urlString: String, completion: @escaping (Result<UIImage?, Error>) -> ()) {
         guard let url = URL(string: urlString) else {
             print("bad url \(urlString)")
             return

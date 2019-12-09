@@ -16,7 +16,7 @@
 		306AF22B239E6FF300FB3CE5 /* ConcurrencyLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF22A239E6FF300FB3CE5 /* ConcurrencyLabTests.swift */; };
 		306AF236239E702700FB3CE5 /* Network Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF235239E702700FB3CE5 /* Network Helper.swift */; };
 		306AF238239E707000FB3CE5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF237239E707000FB3CE5 /* AppError.swift */; };
-		306AF23B239E735000FB3CE5 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF23A239E735000FB3CE5 /* ImageClient.swift */; };
+		306AF23B239E735000FB3CE5 /* ImageAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF23A239E735000FB3CE5 /* ImageAPIClient.swift */; };
 		306AF23D239E740500FB3CE5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF23C239E740500FB3CE5 /* Country.swift */; };
 		306AF23F239E747100FB3CE5 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 306AF23E239E747100FB3CE5 /* countries.json */; };
 		306AF241239E753000FB3CE5 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AF240239E753000FB3CE5 /* CountryDetailViewController.swift */; };
@@ -48,7 +48,7 @@
 		306AF22C239E6FF300FB3CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		306AF235239E702700FB3CE5 /* Network Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Helper.swift"; sourceTree = "<group>"; };
 		306AF237239E707000FB3CE5 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		306AF23A239E735000FB3CE5 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		306AF23A239E735000FB3CE5 /* ImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIClient.swift; sourceTree = "<group>"; };
 		306AF23C239E740500FB3CE5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		306AF23E239E747100FB3CE5 /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		306AF240239E753000FB3CE5 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +74,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300CC007239ED48300F91C3F /* API-Clients */ = {
+			isa = PBXGroup;
+			children = (
+				306AF23A239E735000FB3CE5 /* ImageAPIClient.swift */,
+				306AF242239E759B00FB3CE5 /* CountryAPIClient.swift */,
+			);
+			path = "API-Clients";
+			sourceTree = "<group>";
+		};
+		300CC008239ED4A400F91C3F /* ViewControllers- with CC */ = {
+			isa = PBXGroup;
+			children = (
+				306AF217239E6FF200FB3CE5 /* CountriesViewController.swift */,
+				306AF244239E765200FB3CE5 /* CountryTableViewCell.swift */,
+				306AF240239E753000FB3CE5 /* CountryDetailViewController.swift */,
+			);
+			path = "ViewControllers- with CC";
+			sourceTree = "<group>";
+		};
 		306AF207239E6FF200FB3CE5 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +117,11 @@
 				306AF213239E6FF200FB3CE5 /* AppDelegate.swift */,
 				306AF215239E6FF200FB3CE5 /* SceneDelegate.swift */,
 				306AF219239E6FF200FB3CE5 /* Main.storyboard */,
-				306AF217239E6FF200FB3CE5 /* CountriesViewController.swift */,
-				306AF244239E765200FB3CE5 /* CountryTableViewCell.swift */,
-				306AF240239E753000FB3CE5 /* CountryDetailViewController.swift */,
+				300CC008239ED4A400F91C3F /* ViewControllers- with CC */,
+				300CC007239ED48300F91C3F /* API-Clients */,
+				306AF239239E708500FB3CE5 /* NetworkHelper-AppError */,
 				306AF23C239E740500FB3CE5 /* Country.swift */,
 				306AF23E239E747100FB3CE5 /* countries.json */,
-				306AF239239E708500FB3CE5 /* NH-AE-IC-APIClient */,
 				306AF21C239E6FF300FB3CE5 /* Assets.xcassets */,
 				306AF21E239E6FF300FB3CE5 /* LaunchScreen.storyboard */,
 				306AF221239E6FF300FB3CE5 /* Info.plist */,
@@ -120,15 +138,13 @@
 			path = ConcurrencyLabTests;
 			sourceTree = "<group>";
 		};
-		306AF239239E708500FB3CE5 /* NH-AE-IC-APIClient */ = {
+		306AF239239E708500FB3CE5 /* NetworkHelper-AppError */ = {
 			isa = PBXGroup;
 			children = (
 				306AF235239E702700FB3CE5 /* Network Helper.swift */,
 				306AF237239E707000FB3CE5 /* AppError.swift */,
-				306AF23A239E735000FB3CE5 /* ImageClient.swift */,
-				306AF242239E759B00FB3CE5 /* CountryAPIClient.swift */,
 			);
-			path = "NH-AE-IC-APIClient";
+			path = "NetworkHelper-AppError";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				306AF23D239E740500FB3CE5 /* Country.swift in Sources */,
-				306AF23B239E735000FB3CE5 /* ImageClient.swift in Sources */,
+				306AF23B239E735000FB3CE5 /* ImageAPIClient.swift in Sources */,
 				306AF218239E6FF200FB3CE5 /* CountriesViewController.swift in Sources */,
 				306AF236239E702700FB3CE5 /* Network Helper.swift in Sources */,
 				306AF245239E765200FB3CE5 /* CountryTableViewCell.swift in Sources */,

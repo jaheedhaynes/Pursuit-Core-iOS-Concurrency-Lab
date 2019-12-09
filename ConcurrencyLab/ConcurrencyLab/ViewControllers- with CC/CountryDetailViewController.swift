@@ -32,7 +32,7 @@ class CountryDetailController: UIViewController {
         capitalLabel.text = "Capital: \(validCountry.capital)"
         populationLabel.text = "Population: \(validCountry.population.description)"
         
-        ImageClient.fetchImage(for: validCountry.flag) { [weak self] (result) in
+        ImageAPIClient.getImage(for: validCountry.flag) { [weak self] (result) in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {

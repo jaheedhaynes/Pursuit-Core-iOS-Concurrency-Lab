@@ -14,16 +14,7 @@ class CountryCellTableViewCell: UITableViewCell {
     @IBOutlet var countryLabel: UILabel!
     @IBOutlet var capitalLabel: UILabel!
     @IBOutlet var populationLabel: UILabel!
-    
-//--------------------------------------------------------------------------------------------------
 
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        flagImage.layer.cornerRadius = 4
-    }
-    
 //--------------------------------------------------------------------------------------------------
 
     func configureCell(for country: FlagImage) {
@@ -32,7 +23,7 @@ class CountryCellTableViewCell: UITableViewCell {
         capitalLabel.text = country.capital
         populationLabel.text = country.population.description
         
-        ImageClient.fetchImage(for: country.flag) { [weak self] (result) in
+        ImageAPIClient.getImage(for: country.flag) { [weak self] (result) in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {
