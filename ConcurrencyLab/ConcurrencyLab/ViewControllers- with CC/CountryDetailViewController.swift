@@ -24,15 +24,15 @@ class CountryDetailController: UIViewController {
     }
     
     func updateUI() {
-        guard let validCountry = country else {
+        guard let Country = country else {
             fatalError("could not load country")
         }
         
-        countryNameLabel.text = validCountry.name
-        capitalLabel.text = "Capital: \(validCountry.capital)"
-        populationLabel.text = "Population: \(validCountry.population.description)"
+        countryNameLabel.text = Country.name
+        capitalLabel.text = "Capital: \(Country.capital)"
+        populationLabel.text = "Population: \(Country.population.description)"
         
-        ImageAPIClient.getImage(for: validCountry.flag) { [weak self] (result) in
+        ImageAPIClient.getImage(for: Country.flag) { [weak self] (result) in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {

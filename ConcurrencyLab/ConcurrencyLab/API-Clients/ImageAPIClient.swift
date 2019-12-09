@@ -20,15 +20,11 @@ struct ImageAPIClient {
                 if let error = error {
                 print("error: \(error)")
             }
-            
             if let data = data {
                 let image = UIImage(data: data)
                 completion(.success(image))
-                
             }
-            
         }
-        
         dataTask.resume()
     }
 }
